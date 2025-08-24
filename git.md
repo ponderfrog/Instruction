@@ -1,5 +1,5 @@
 # 基础设置
-- git config --global user.name *"your_name"*
+- git config --global user.name "*your_name*"
 - git config --global user.email *email_address@email.com*
 - git config --global core.editor vim
 - git config --global init.defaultBranch *main*
@@ -23,3 +23,14 @@ git checkout *branch_name*
 ## 重命名
 git branch -m *new_name*
 
+# 推送本地仓库到远程仓库
+## 初始化本地仓库
+git init
+## 追踪本地文件
+git add *files you need*
+## 添加评论
+git commit -m "*comments*"
+## 添加远程仓库地址
+git remote add origin *ssh_address*
+## 推送
+git push -u origin *branch_name*
