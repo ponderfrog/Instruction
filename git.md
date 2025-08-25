@@ -34,3 +34,9 @@ git commit -m "*comments*"
 git remote add origin *ssh_address*
 ## 推送
 git push -u origin *branch_name*
+
+# 从远程仓库拉取
+## 添加远程地址
+git remote add origin *ssh_address*
+## 拉取内容
+git pull origin *branch_name*

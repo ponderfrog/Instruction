@@ -1,5 +1,5 @@
 # Instructions
 
-Instructions and favorite configs.
+Instructions and Preferences.
 
 - Git
