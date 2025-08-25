@@ -4,8 +4,7 @@
 - git config --global core.editor vim
 - git config --global init.defaultBranch *main*
 - git config --global color.ui auto
-
-# 查看配置情况
+## 查看配置情况
 - git config --list
 
 # 连接远程github
