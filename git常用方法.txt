@@ -1,0 +1,105 @@
+vscode设置代理（基于v2ray）
+1. 设置区搜索代理
+2. Http:Proxy
+3. 填入 http://127.0.0.1:10809
+git配置文件的三个位置
+提示：低阶设置覆盖高阶配置
+系统设置
+1. /etc/gitconfig	use --system
+用户设置
+2. ~/.gitconfig		use --global
+本地文件夹设置
+3. .git/config	use --local
+
+
+新的git首先设置用户配置
+git config --global user.name "jessica613"
+git config --global user.email jessy.citron@hotmail.com
+git config --global core.editor vim
+
+git设置代理(基于clash)
+git config --global http.proxy 'http://127.0.0.1:7897'
+取消代理
+git config --global --unset http.proxy
+
+显示当前的git配置情况
+git config --global --list 
+
+
+新建git跟踪
+git init
+
+git add （--all，*.html等）
+git commit -m "xxx"
+git rm      删除文件
+git mv      改名
+
+
+查看git状态
+git status
+查看git记录
+git log （通过参数来查找某个特定记录信息）
+
+清理忽略的文件
+git clean -fX
+
+恢复已删除的文件（恢复文件到上一次commit的状态）
+git checkout file_name
+切换分支
+git checkout branch_name
+
+git reset 
+回到某一次的commit
+
+分支
+新增分支
+git branch New_Branch_Name
+修改分支名称
+git branch -m old_name new_name
+删除分支
+git branch -d/-D name
+切换分支
+git checkout name
+合并分支
+git merge branch_name
+
+上传到github
+git push -u origin master
+取回
+git fetch
+
+git pull = git fetch + git merge
+
+
+与远程库建立连接
+git remote add origin repo_url
+查看远程仓库
+git remote -v
+获取远程仓库内容
+git pull origin master
+推送到远程仓库
+git push -u origin master
+-------------------------------------------------------------------------
+git diff	#show the upgraded section
+
+use .gitignore file to remove the files we don't want to track, and the rules are:
+1. empty lines and lines begin with # will be ignored.
+2. standard glob model will be used to match and applied recursively in the whole workspace.
+3. '/' can be used at the begin to prevent recursion and at the end to appoint the directory.
+4. to ignore the files beyond our indication, use '!' 
+
+
+
+use the remote repository
+git remote -v	#show all remote repositories
+git remote add nickname url
+#set url as https://YOUR_TOKEN@github.com/owner/repo.git to avoid repeated inputof password
+
+git push remote branch
+git remote show remote
+git remote rename
+git remote remove
+
+git reset --hard origin/master
+
+git tag	#show tags
