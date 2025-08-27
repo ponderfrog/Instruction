@@ -30,12 +30,15 @@ git add *files you need*
 ## 添加评论
 git commit -m "*comments*"
 ## 添加远程仓库地址
-git remote add origin *ssh_address*
+git remote add origin *repository_address*
 ## 推送
 git push -u origin *branch_name*
 
 # 从远程仓库拉取
 ## 添加远程地址
-git remote add origin *ssh_address*
+git remote add origin *repository_address*
 ## 拉取内容
 git pull origin *branch_name*
+## 修改/删除远程仓库地址
+git remote rename origin *repository_address*
+git remote remove origin
