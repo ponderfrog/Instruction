@@ -1,0 +1,101 @@
+" Vim with all enhancements
+source $VIMRUNTIME/vimrc_example.vim
+
+" Use the internal diff if available.
+" Otherwise use the special 'diffexpr' for Windows.
+if &diffopt !~# 'internal'
+  set diffexpr=MyDiff()
+endif
+function MyDiff()
+  let opt = '-a --binary '
+  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+  let arg1 = v:fname_in
+  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+  let arg1 = substitute(arg1, '!', '\!', 'g')
+  let arg2 = v:fname_new
+  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+  let arg2 = substitute(arg2, '!', '\!', 'g')
+  let arg3 = v:fname_out
+  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+  let arg3 = substitute(arg3, '!', '\!', 'g')
+  if $VIMRUNTIME =~ ' '
+    if &sh =~ '\<cmd'
+      if empty(&shellxquote)
+        let l:shxq_sav = ''
+        set shellxquote&
+      endif
+      let cmd = '"' . $VIMRUNTIME . '\diff"'
+    else
+      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+    endif
+  else
+    let cmd = $VIMRUNTIME . '\diff'
+  endif
+  let cmd = substitute(cmd, '!', '\!', 'g')
+  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
+  if exists('l:shxq_sav')
+    let &shellxquote=l:shxq_sav
+  endif
+endfunction
+
+filetype on
+filetype indent on
+filetype plugin on
+syntax on
+syntax enable
+set encoding=utf-8
+set fenc=utf-8
+set termguicolors
+set ambiwidth=double
+set showmatch
+set nocompatible
+set exrc
+set secure
+set hidden
+set updatetime=3000
+set shortmess+=c
+set number
+set rnu
+set wrap
+set linebreak
+set wildmenu
+set cursorline
+set cursorcolumn
+set ruler
+set hlsearch
+set foldenable
+set incsearch
+set ignorecase
+set smartcase
+set foldmethod=syntax
+set foldlevelstart=99
+set expandtab
+set shiftwidth=4
+set autoindent
+set backspace=indent,eol,start
+set autochdir
+set scrolloff=5
+set background=dark
+colorscheme solarized
+set gcr=a:ver25-blinkon0
+
+" 0, 1, 2, 3
+set laststatus=3
+" 取消所有左侧滚动条
+set guioptions-=l
+" 取消最左侧的滚动条
+set guioptions-=L
+" 取消所有右侧滚动条
+" set guioptions-=r
+" 取消最右侧的滚动条
+" set guioptions-=R
+" 取消菜单栏
+" set guioptions-=m
+" 取消工具栏
+" set guioptions-=T
+
+" 显示空格符
+" set list
+" 空格符样式
+" set listchars=
