@@ -42,3 +42,12 @@ git pull origin *branch_name*
 ## 修改/删除远程仓库地址
 git remote rename origin *repository_address*
 git remote remove origin
+## 查看远程仓库链接
+git remote -v
+
+# .gitignore
+## 基础
+- !忽略匹配到的文件/文件夹
+- #注释
+- ?任意一个字符
+- [abc]匹配abc中的任意字符
