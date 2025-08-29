@@ -18,6 +18,7 @@ ssh -T git@github.com
 >.ssh文件夹中添加config文件<br>
 >注意修改私钥地址<br>
 >代理中-V可选，代理端口注意修改<br>
+>windows下可能需要Nmap/netcat的支持<br>
 ```
 Host github.com
   HostName ssh.github.com
