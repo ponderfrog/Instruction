@@ -13,14 +13,16 @@
 2. 将公钥填写到github上
 ## 测试SSH配置
 ssh -T git@github.com
-## 配置SSH端口
-22端口（SSH默认端口）被屏蔽时，可以改用443端口
-.ssh文件夹中添加config文件
+## 配置SSH端口和代理
+>22端口（SSH默认端口）被屏蔽时，可以改用443端口
+>.ssh文件夹中添加config文件
 ```
 Host github.com
   HostName ssh.github.com
   User git
   Port 443
+  IdentityFile ~/.ssh/id_rsa
+  ProxyCommand nc -V -x 127.0.0.1:7890 %h %p
 ````
 
 # 重命名本地Git分支
