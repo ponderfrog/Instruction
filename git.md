@@ -14,8 +14,10 @@
 ## 测试SSH配置
 ssh -T git@github.com
 ## 配置SSH端口和代理
->22端口（SSH默认端口）被屏蔽时，可以改用443端口
->.ssh文件夹中添加config文件
+>22端口（SSH默认端口）被屏蔽时，可以改用443端口  
+>.ssh文件夹中添加config文件  
+>注意修改私钥地址  
+>代理中-V可选，代理端口注意修改  
 ```
 Host github.com
   HostName ssh.github.com
