@@ -13,6 +13,15 @@
 2. 将公钥填写到github上
 ## 测试SSH配置
 ssh -T git@github.com
+## 配置SSH端口
+22端口（SSH默认端口）被屏蔽时，可以改用443端口
+.ssh文件夹中添加config文件
+```
+Host github.com
+  HostName ssh.github.com
+  User git
+  Port 443
+````
 
 # 重命名本地Git分支
 ## 查看本地分支
@@ -40,7 +49,7 @@ git remote add origin *repository_address*
 ## 拉取内容
 git pull origin *branch_name*
 ## 修改/删除远程仓库地址
-git remote rename origin *repository_address*
+git remote rename origin *repository_address*  
 git remote remove origin
 ## 查看远程仓库链接
 git remote -v
