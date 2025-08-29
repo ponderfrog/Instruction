@@ -53,7 +53,8 @@ git remote add origin *repository_address*
 ## 拉取内容
 git pull origin *branch_name*
 ## 修改/删除远程仓库地址
-git remote rename origin *repository_address*  
+git remote rename origin *repository_address*
+
 git remote remove origin
 ## 查看远程仓库链接
 git remote -v
