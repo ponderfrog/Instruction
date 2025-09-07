@@ -1,3 +1,4 @@
+### General settings
 ```
 {
     "ignored_packages":
@@ -16,6 +17,11 @@
     "ensure_newline_at_eof_on_save": true,
     "default_encoding": "utf-8",
     "save_on_focus_lost": true,
-    "auto_match_enabled": true
+    "auto_match_enabled": true,
 }
+```
+
+### Shortcut keys
+```
+
 ```
