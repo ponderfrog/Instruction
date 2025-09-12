@@ -23,5 +23,7 @@
 
 ### Shortcut keys
 ```
-
+{
+"keys": ["alt+q"], "command": "markdown_preview", "args": {"target": "browser", "parser":"markdown"}
+}
 ```
