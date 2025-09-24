@@ -22,11 +22,27 @@ b'abc'.decode('ascii', errors='ignore')
 # 函数
 
 ```
-def func(a, b, c):
-    
+x = 10
+def func(a: int, b: float, c: str, *args, **kwargs) -> float:
+    # 全局变量
+    global x
+
     # 检查参数的类型
     if not isinstance(a, (int, float)):
         raise TypeError('bad type')
 
+    # 元组形式传入
+    print(args)
+
+    # 字典形式传入
+    print(kwargs)
+
     return 10*a, 10*b
 ```
+
+## 匿名函数
+```
+square = lambda x: x**2
+```
+
+## 装饰器
