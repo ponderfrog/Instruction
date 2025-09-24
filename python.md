@@ -45,4 +45,52 @@ def func(a: int, b: float, c: str, *args, **kwargs) -> float:
 square = lambda x: x**2
 ```
 
+## 闭包
+在函数内部定义一个内层函数
+nonlocal在嵌套函数中向外层寻找匹配的（非全局）**变量**，直到达到全局作用域
+```
+def counter():
+    n = 0
+    def inc():
+        nonlocal n
+        n += 1
+        return n
+    return inc
+
+c = counter()
+print(c())  # 1
+print(c())  # 2
+```
 ## 装饰器
+接受一个函数并返回新函数
+通常用闭包实现
+```
+import functools
+
+def my_decorator(func):
+    
+    # 保留原始的元信息
+    # 把原函数的关键信息复制到wrapper上
+    @functools.wraps(func)   # 在这里加 wraps
+    def wrapper(*args, **kwargs):   # 闭包
+        print("Before call")
+        return func(*args, **kwargs)
+    return wrapper
+
+@my_decorator
+def hello():
+    """这是原始函数的文档"""
+    print("Hello!")
+
+print(hello.__name__)   # hello ✅
+print(hello.__doc__)    # 这是原始函数的文档 ✅
+```
+
+## 高阶函数
+```
+# 传入函数
+def add(x, y, f):
+    return f(x) + f(y)
+
+print(add(-5, 6, abs))
+```
