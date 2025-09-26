@@ -20,7 +20,6 @@ b'abc'.decode('ascii', errors='ignore')
 ```
 
 # 函数
-
 ```
 x = 10
 def func(a: int, b: float, c: str, *args, **kwargs) -> float:
@@ -52,6 +51,7 @@ nonlocal在嵌套函数中向外层寻找匹配的（非全局）**变量**，�
 def counter():
     n = 0
     def inc():
+        # 修改外部变量必须使用nonlocal
         nonlocal n
         n += 1
         return n
@@ -61,6 +61,7 @@ c = counter()
 print(c())  # 1
 print(c())  # 2
 ```
+
 ## 装饰器
 接受一个函数并返回新函数
 通常用闭包实现
@@ -93,4 +94,23 @@ def add(x, y, f):
     return f(x) + f(y)
 
 print(add(-5, 6, abs))
+```
+
+### map/reduce函数
+```
+map(func, Iterable_element)
+    return Iterator
+```
+
+```
+
+```
+
+## 偏函数
+设定默认参数，返回新函数
+```
+import functools
+
+int2 = functools.partial(int, base=2)
+int2(10)
 ```
