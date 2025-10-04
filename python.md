@@ -1,5 +1,8 @@
 # 指定编码
-`# -*- coding: utf-8 -*-`
+```
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+```
 
 # 字符串
 str以Unicode编码
