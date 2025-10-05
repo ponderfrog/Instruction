@@ -1,4 +1,5 @@
 # 指定编码
+放在直接执行脚本的最开头
 ```
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
@@ -117,3 +118,9 @@ import functools
 int2 = functools.partial(int, base=2)
 int2(10)
 ```
+
+# 包调用
+- 同级文件夹     from xxx import func
+- 子文件夹       from xx.xx import func
+- 上级文件夹     from ..xx import func
+- 同级子文件夹   from ..xx.xx import func
