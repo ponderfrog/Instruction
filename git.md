@@ -1,6 +1,6 @@
 # 基础设置
 - git config --global user.name "*your_name*"
-- git config --global user.email *email_address@email.com*
+- git config --global user.email *email_address*
 - git config --global core.editor vim
 - git config --global init.defaultBranch *main*
 - git config --global color.ui auto
