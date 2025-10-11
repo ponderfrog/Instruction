@@ -5,6 +5,7 @@
 - git config --global init.defaultBranch *main*
 - git config --global color.ui auto
 - git config --global core.autocrlf true
+- git config --global alias.quickcommit 'commit -m "quick commit"'
 ## 查看配置情况
 - git config --list
 
